@@ -14,7 +14,7 @@ st.set_page_config(
 def load_model():
     """Load and cache the model"""
     plant_model = PlantDiseaseModel()
-    plant_model.initialize_weights()
+    plant_model.initialize_model()
     return plant_model
 
 def main():
@@ -23,6 +23,14 @@ def main():
     ### Upload an image of your crop to detect diseases
     **Supported Crops:** Tomato, Corn (Maize), Potato
     """)
+    
+    with st.container():
+        col_alert1, col_alert2 = st.columns([1, 3])
+        with col_alert1:
+            st.write("⚠️")
+        with col_alert2:
+            st.warning("**Demo Mode:** This model uses synthetic training data for demonstration. For production use, train with the actual PlantVillage dataset (~54K images). See README.md for instructions.")
+
     
     st.markdown("---")
     
@@ -42,13 +50,17 @@ def main():
             st.image(image, caption="Uploaded Image", use_container_width=True)
             
             if st.button("🔍 Analyze Image", type="primary", use_container_width=True):
-                with st.spinner("Analyzing image..."):
-                    model = load_model()
-                    
-                    result = model.predict(image)
-                    
-                    st.session_state['prediction_result'] = result
-                    st.session_state['analyzed'] = True
+                with st.spinner("Analyzing image... This may take a moment on first run."):
+                    try:
+                        model = load_model()
+                        result = model.predict(image)
+                        
+                        st.session_state['prediction_result'] = result
+                        st.session_state['analyzed'] = True
+                        st.rerun()
+                    except Exception as e:
+                        st.error(f"Error analyzing image: {str(e)}")
+                        st.error("Please try uploading a different image.")
         else:
             st.info("👆 Please upload an image to get started")
             st.markdown("""
@@ -70,6 +82,9 @@ def main():
             crop, disease = parse_disease_name(predicted_class)
             
             st.success(f"**Analysis Complete!**")
+            
+            if confidence < 0.3:
+                st.warning("⚠️ Low confidence detection. The image may not be clear or the disease may not be in our database. Please consult an expert.")
             
             st.metric(
                 label="Detected Condition",
@@ -130,10 +145,39 @@ def main():
             st.info("💡 **Tip:** Prevention is always better than cure. Regular monitoring and good agricultural practices can prevent most diseases.")
     
     st.markdown("---")
+    
+    with st.expander("ℹ️ About This Application"):
+        st.markdown("""
+        **AI Plant Disease Detector** is powered by a Deep Learning CNN model using transfer learning with MobileNetV2.
+        
+        **Supported Crops:**
+        - 🍅 Tomato (10 classes including healthy)
+        - 🌽 Corn/Maize (4 classes including healthy)
+        - 🥔 Potato (3 classes including healthy)
+        
+        **How it works:**
+        1. Upload a clear image of your crop leaf
+        2. The AI model analyzes the image using convolutional neural networks
+        3. Get instant disease identification with confidence scores
+        4. View detailed information about symptoms, treatment, and prevention
+        
+        **Important Notes:**
+        - This is a demonstration model using transfer learning
+        - For production agricultural use, consult with local agricultural experts
+        - Results should be verified by professionals before taking action
+        - Model accuracy improves with high-quality, well-lit images
+        
+        **Technology Stack:**
+        - Deep Learning: TensorFlow & Keras
+        - Transfer Learning: MobileNetV2 (ImageNet pre-trained)
+        - Framework: Streamlit
+        - Dataset Approach: PlantVillage methodology
+        """)
+    
     st.markdown("""
     <div style='text-align: center; color: #666;'>
         <p><strong>AI Plant Disease Detector</strong> | Powered by Deep Learning CNN Model</p>
-        <p>Trained on PlantVillage Dataset | Supporting Tomato, Corn, and Potato Crops</p>
+        <p>Transfer Learning with MobileNetV2 | Supporting Tomato, Corn, and Potato Crops</p>
     </div>
     """, unsafe_allow_html=True)
 
