@@ -1,0 +1,86 @@
+🎓 StudyNow – Smart Study Time Tracker App
+
+StudyNow is a simple yet elegant Android application built to help students track and manage their study time effectively. It combines a modern, minimal UI with essential productivity features — making study sessions focused and trackable.
+
+🚀 Key Features
+🕒 Splash + Authentication Flow
+
+Splash Screen — Beautiful animated intro for branding.
+
+First-Time User Flow:
+Splash → Register → Login → MainActivity
+
+Returning User Flow:
+Splash → MainActivity directly.
+
+Room Database for secure local data storage (stores user credentials & details).
+
+👤 Account Management
+
+Users can create an account by entering:
+
+Full Name
+
+Email
+
+Current Education (select list)
+
+Year of Study
+
+Username & Password
+
+Login System: Username + Password-based validation.
+
+Auto Login: Once logged in, user doesn’t need to log in again unless they log out manually.
+
+Logout option in the main menu to switch users or log in with a new account.
+
+⏱️ Study Timer Screen (MainActivity)
+
+Abstract background image gives a modern, clean aesthetic.
+
+Circular chronometer-based timer at the center.
+
+Two buttons:
+
+🟢 Start Study → starts countdown timer (default 1 hour).
+
+🔴 Stop Study → stops or resets the timer.
+
+Buttons have hover/tap effects for a polished experience.
+
+Editable timer duration for user flexibility.
+
+📋 Menu & Profile
+
+Top-left Menu Button with options:
+
+Invite Friends
+
+Start Live Session
+
+Analyse Yourself
+
+Logout
+
+Top-right Profile Button for user info (future expansion-ready).
+
+🧠 Tech Stack
+Layer	Technology
+Frontend	XML Layouts, Material Components
+Backend / Logic	Java
+Database	Room (SQLite ORM)
+Persistence	SharedPreferences (for login session)
+Build System	Gradle
+Version Control	Git + GitHub
+🪄 Highlights
+
+Clean UI/UX consistency using elegant colors across screens.
+
+Reusable Room DB structure — all user data stored in one table.
+
+Handles multiple users — allows logout and login as another user.
+
+Works fully offline — no internet required.
+
+Lightweight APK and fast performance, ideal for entry-to-mid-level Android devices.
