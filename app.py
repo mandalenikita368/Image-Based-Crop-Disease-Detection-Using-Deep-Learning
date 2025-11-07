@@ -3,8 +3,9 @@ from PIL import Image
 import numpy as np
 import json
 from datetime import datetime
-from model import PlantDiseaseModel
 from disease_info import get_disease_info, parse_disease_name
+from model import PlantDiseaseModel
+from disease_info import get_disease_info
 from database import SessionLocal, init_db
 from auth import create_user, authenticate_user, get_user_by_id
 from detection_utils import save_detection, get_user_detections, get_user_stats
@@ -254,11 +255,19 @@ def display_disease_information(predicted_class):
         with col_a: st.write("**Crop:**"); st.write(disease_info['crop'])
         with col_b: st.write("**Pathogen:**"); st.write(disease_info['pathogen'])
     with tab2:
-        st.markdown("**Symptoms:**"); [st.write(f"- {s}") for s in disease_info['symptoms']]
+        st.markdown("**🩺 Symptoms:**")
+        for s in disease_info['symptoms']:
+            st.write(f"- {s}")
+
     with tab3:
-        st.markdown("**Treatment:**"); [st.write(f"- {t}") for t in disease_info['treatment']]
+        st.markdown("**💊 Treatment:**")
+        for t in disease_info['treatment']:
+            st.write(f"- {t}")
+
     with tab4:
-        st.markdown("**Prevention:**"); [st.write(f"- {p}") for p in disease_info['prevention']]
+        st.markdown("**🛡️ Prevention:**")
+        for p in disease_info['prevention']:
+            st.write(f"- {p}")
 
 # --- Dashboard Page ---
 def dashboard_page():
