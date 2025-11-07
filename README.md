@@ -75,12 +75,3 @@ source venv/bin/activate  # (on macOS/Linux)
 pip install -r requirements.txt
 streamlit run app.py
 
-## 📸 Working Demo
-
-| Login Dashboard | Upload Image Page | Analysis of Image Page |
-|-----------------|--------------------|---------------------------|
-| ![Login](screenshots/screenshot_2025-11-07-191018.png) | ![Upload](screenshots/upload_image_page.png) | ![Analysis](screenshots/screenshot_2025-11-07-192322.png) |
-
-| Disease Info Page | Dashboard | Upload Multiple Images |
-|--------------------|-----------|--------------------------|
-| ![DiseaseInfo](screenshots/screenshot_2025-11-07-192348.png) | ![Dashboard](screenshots/screenshot_2025-11-07-192421.png) | ![UploadMultiple](screenshots/screenshot_2025-11-07-192526.png) |
