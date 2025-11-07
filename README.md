@@ -74,3 +74,14 @@ venv\Scripts\activate  # (on Windows)
 source venv/bin/activate  # (on macOS/Linux)
 pip install -r requirements.txt
 streamlit run app.py
+
+## 📸 Working Demo
+
+| Image Upload | Prediction Result | Disease Info |
+|---------------|------------------|---------------|
+### 📤 Login Dashboard
+[Login Dashboard]("C:\Users\nikit\Downloads\ExpenseFlow\ExpenseFlow\screenshots\Screenshot 2025-11-07 191018.png")
+|### 📤 Upload Image Page
+![Upload Image Page](screenshots/upload_image_page.png)
+| ![Disease Info](screenshots/info.png) |
+
