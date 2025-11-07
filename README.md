@@ -77,7 +77,10 @@ streamlit run app.py
 
 ## 📸 Working Demo
 
-| Image Upload | Prediction Result | Disease Info |
-|--------------|-----------------|--------------|
-| ![Login Dashboard](screenshots/Screenshot%202025-11-07%20191018.png) | ![Upload Image Page](screenshots/upload_image_page.png) | ![Analysis of Image Page](screenshots/Screenshot%202025-11-07%20192322.png) |
-| ![Disease Info Page](screenshots/Screenshot%202025-11-07%20192348.png) | ![Dashboard](screenshots/Screenshot%202025-11-07%20192421.png) | ![Upload Multiple Images](screenshots/Screenshot%202025-11-07%20192526.png) |
+| Login Dashboard | Upload Image Page | Analysis of Image Page |
+|-----------------|--------------------|---------------------------|
+| ![Login](screenshots/screenshot_2025-11-07-191018.png) | ![Upload](screenshots/upload_image_page.png) | ![Analysis](screenshots/screenshot_2025-11-07-192322.png) |
+
+| Disease Info Page | Dashboard | Upload Multiple Images |
+|--------------------|-----------|--------------------------|
+| ![DiseaseInfo](screenshots/screenshot_2025-11-07-192348.png) | ![Dashboard](screenshots/screenshot_2025-11-07-192421.png) | ![UploadMultiple](screenshots/screenshot_2025-11-07-192526.png) |
