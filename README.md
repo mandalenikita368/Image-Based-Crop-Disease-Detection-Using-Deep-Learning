@@ -80,8 +80,17 @@ streamlit run app.py
 | Image Upload | Prediction Result | Disease Info |
 |---------------|------------------|---------------|
 ### 📤 Login Dashboard
-[Login Dashboard]("C:\Users\nikit\Downloads\ExpenseFlow\ExpenseFlow\screenshots\Screenshot 2025-11-07 191018.png")
+(Screenshot 2025-11-07 191018.png)
 |### 📤 Upload Image Page
-![Upload Image Page](screenshots/upload_image_page.png)
-| ![Disease Info](screenshots/info.png) |
+(screenshots/upload_image_page.png)
+|### 📤 Analysis of Image Page
+(Screenshot 2025-11-07 192322.png)
+|### 📤 Disease Information of Image Page
+(Screenshot 2025-11-07 192348.png)
+|### 📤 Dashboard..
+(Screenshot 2025-11-07 192421.png)
+|### 📤 Upload Multiple Images..
+(Screenshot 2025-11-07 192526.png)
+
+
 
